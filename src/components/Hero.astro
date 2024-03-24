@@ -1,46 +1,60 @@
 ---
-const personalImageAlt = "Miguel Ángel"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const personalImageAlt = "Miguel Ángel";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
+<script is:inline>
+  function emailToClipboard() {
+    // Copy the text inside the text field
+    navigator.clipboard.writeText("ismael@ismaelvalle.es");
+
+    var emailInput = document.getElementById("email");
+    emailInput.innerHTML = "Copiado al portapapeles!";
+    setTimeout(() => {
+      emailInput.innerHTML = "ismael@ismaelvalle.es";
+    }, "1000");
+  }
+</script>
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/midudev.webp"
+      src="/Ismael.webp"
       alt={personalImageAlt}
     />
     <a
-      href="https://linkedin.com/in/midudev"
+      href="https://www.linkedin.com/in/ismael-valle-mart%C3%ADnez-7142031a8/"
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>Trabajando</Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hey, soy midudev
+    Hola, soy Ismael Valle
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    +15 años de experiencia. <strong
-      >Ingeniero de Software y Creador de Contenido sobre Programación</strong
-    > de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web
-    únicas.
+    <strong>Analista funcional y desarrollador web</strong>
+    <p class="pt-4">+7 años de experiencia desarrollando aplicaciones webs. Especializado en crear aplicaciones de entornos empresariales.</p>
+    <p class="pt-4">Geek curioso de todo lo que tenga que ver con tecnología y software.</p>
+    <p class="pt-4">¿Quieres mi CV? Escríbeme al email que tienes justo debajo, estaré encantado de mandartelo.</p>
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:miduga@gmail.com">
+    <SocialPill>
       <MailIcon class="size-4" />
-      Contáctame
+      <p id="email">ismael@ismaelvalle.es</p>
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/midudev">
+    <SocialPill
+      href="https://www.linkedin.com/in/ismael-valle-mart%C3%ADnez-7142031a8/"
+    >
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
